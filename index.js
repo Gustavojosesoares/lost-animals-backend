@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.json());
 app.use('/uploads', express.static('uploads'));
 
-mongoose.connect('mongodb+srv://gustavo:gugaBD06@gustavo.ak5ac.mongodb.net/lostanimals?retryWrites=true&w=majority&appName=Gustavo');
+mongoose.connect(process.env.MONGODB_URI);
 
 
 const LostAnimal = mongoose.model('LostAnimal', {
